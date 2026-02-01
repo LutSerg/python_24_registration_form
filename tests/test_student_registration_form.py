@@ -9,6 +9,8 @@ from selene.support.conditions import have, be
 def test_student_registration_form(set_browser):
     # Открытие сайта
     browser.open('/automation-practice-form')
+    browser.driver.execute_script("$('#fixedban').remove()")
+    browser.driver.execute_script("$('footer').remove()")
     browser.element('h5').should(have.text('Student Registration Form'))
 
     # Заполнение данных
